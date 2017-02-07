@@ -34,7 +34,7 @@ namespace ConsoleApplication
         }
         public static void printArrVals()
         {
-            Console.WriteLine("hello");
+            Console.WriteLine("hello there");
         }
         public static void Main(string[] args)
         {
