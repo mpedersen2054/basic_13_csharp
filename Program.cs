@@ -32,12 +32,18 @@ namespace ConsoleApplication
             }
             // Console.WriteLine(sum);
         }
-        public static void printArrVals()
+        
+        //For these array methods, you should accept an array as a function parameter
+        //rather than hard coding the array and its values inside the method
+        public static void printArrVals(int[] arr)
+        //public static void printArrVals()
         {
-            int[] arr = new int[] { 1, 3, 5, 7, 9, 13 };
+            //int[] arr = new int[] { 1, 3, 5, 7, 9, 13 };
             foreach (int item in arr)
             {
-                System.Console.WriteLine(item);
+                Console.WriteLine(item);
+                //No need to added the System. aspect when importing the System namespace
+                //System.Console.WriteLine(item);
             }
         }
         public static void findMax()
@@ -76,10 +82,13 @@ namespace ConsoleApplication
             }
             System.Console.WriteLine(odds);
         }
-        public static void greaterThanY()
+        
+        //Similar to the arrays, y should also be a parameter of this function
+        public static int greaterThanY(int[] arr, int y)
+        //public static void greaterThanY()
         {
-            int[] arr = { 1, 3, 5, 7 };
-            int y = 2;
+            //int[] arr = { 1, 3, 5, 7 };
+            //int y = 2;
             int numOfGreater = 0;
 
             foreach (int numb in arr)
@@ -90,6 +99,7 @@ namespace ConsoleApplication
                 }
             }
             System.Console.WriteLine(numOfGreater);
+            return numOfGreater;
         }
         public static void squareVals()
         {
@@ -116,7 +126,9 @@ namespace ConsoleApplication
         public static void minMaxAvg()
         {
             int[] arr = { 1, 5, 10, -3 };
-            int min = arr[0]; int max = arr[0]; int sum = 0;
+            int min = arr[0];
+            int max = arr[0];
+            int sum = 0;
 
             for (int i = 0; i < arr.Length; i++)
             {
@@ -134,16 +146,20 @@ namespace ConsoleApplication
         public static void shiftArr()
         {
             int[] arr = new int[] { 1, 5, 10, 7, -2 };
-            for (int i = 0; i < arr.Length - 1; i++)
+            //This loop goes 1 index too far and will throw an index out of bounds error
+            for (int i = 0; i < arr.Length - 2; i++)
             {
                 arr[i] = arr[i + 1];
             }
             arr[arr.Length - 1] = 0;
             System.Console.WriteLine(arr);
         }
-        public static void numToStr()
+        
+        //This method should return the mutated array
+        public static object[] numToStr(int[] arr)
+        //public static void numToStr()
         {
-            int[] arr = new int[] { 1, -5, 10, 7, -2 };
+            //int[] arr = new int[] { 1, -5, 10, 7, -2 };
             object[] secondArr = new object[arr.Length];
             for (int i = 0; i < arr.Length; i++)
             {
@@ -156,8 +172,8 @@ namespace ConsoleApplication
                     secondArr[i] = arr[i];
                 }
             }
-            System.Console.WriteLine(secondArr);
-            
+            //System.Console.WriteLine(secondArr);
+            return secondArr;
         }
         public static void Main(string[] args)
         {
